@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPT PowerTech</title>
+    <link rel="icon" type="image/png" href="assets/media/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preload" as="image" href="assets/media/banner1.webp">
+    <link rel="preload" as="image" href="assets/media/banner2.webp">
+    <link rel="preload" as="image" href="assets/media/banner3.webp">
+</head>
+
+<body>
+    <div></div>
+    <div class="">
+        <nav class="side-nav">
+            <ul>
+                <li>
+                    <a href="#active-directory" data-panel="active-directory" title="Group Directory Search">
+                        <img src="assets/media/active directory.svg" alt="Dashboard Icon"
+                            class="nav-icon active-directory-icon">
+
+                    </a>
+                </li>
+                <li>
+                    <a href="#calendar" data-panel="calendar" title="Upcoming Events">
+                        <img src="assets/media/upcoming events.svg" alt="Dashboard Icon" class="nav-icon calendar-icon">
+                        <span class="notification-dot"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#share" data-panel="share" title="Share & Collaborate">
+                        <svg width="20" height="26" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="share-icon nav-icon">
+                            <path d="M26.1484 9.51172C29.2318 11.6546 31.3593 15.0617 31.7909 18.993"
+                                stroke="currentColor" stroke-width="2.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M5.38281 19.0711C5.78365 15.1553 7.88031 11.7482 10.9328 9.58984"
+                                stroke="currentColor" stroke-width="2.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M12.625 32.2832C14.4133 33.1928 16.4483 33.7015 18.5913 33.7015C20.6571 33.7015 22.5996 33.239 24.3417 32.3911"
+                                stroke="currentColor" stroke-width="2.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M18.5905 11.8705C20.9575 11.8705 22.8764 9.95166 22.8764 7.58466C22.8764 5.21766 20.9575 3.29883 18.5905 3.29883C16.2235 3.29883 14.3047 5.21766 14.3047 7.58466C14.3047 9.95166 16.2235 11.8705 18.5905 11.8705Z"
+                                stroke="currentColor" stroke-width="2.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M7.4499 30.7103C9.8169 30.7103 11.7357 28.7915 11.7357 26.4245C11.7357 24.0575 9.8169 22.1387 7.4499 22.1387C5.0829 22.1387 3.16406 24.0575 3.16406 26.4245C3.16406 28.7915 5.0829 30.7103 7.4499 30.7103Z"
+                                stroke="currentColor" stroke-width="2.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M29.5515 30.7103C31.9185 30.7103 33.8373 28.7915 33.8373 26.4245C33.8373 24.0575 31.9185 22.1387 29.5515 22.1387C27.1845 22.1387 25.2656 24.0575 25.2656 26.4245C25.2656 28.7915 27.1845 30.7103 29.5515 30.7103Z"
+                                stroke="currentColor" stroke-width="2.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#network" data-panel="network" title="Network Analytics">
+                        <img src="assets/media/chart.svg" alt="Dashboard Icon" class="chart-icon nav-icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="#directory" title="Group Directory Search">
+                        <img src="assets/media/more.png" alt="Dashboard Icon" class="nav-icon active-directory-icon">
+
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="top-pattern-bar">
+                <a href="#dashboard" class="dashboard-icon" title="Dashboard">
+                    <img src="assets/media/dashboard.svg" alt="Dashboard Icon">
+                </a>
+                <div class="user-welcome">
+                    <img src="assets//media/user.png" alt="User" class="user-image">
+                    <span class="user-name">
+                        Ahmad Abdallah
+                        <i class="bi bi-chevron-down dropdown-arrow"></i>
+                    </span>
+                    <div class="dropdown-menu">
+                        <a href="#">Profile</a>
+                        <a href="#">Settings</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg custom-navbar">
+                <div class="container-fluid navbar-container">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/media/logo-subpage.png" alt="IPT PowerTech">
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item"><a class="nav-link" href="Media.html">Media Gallery</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#policies-procedures">Policies &
+                                    Procedures</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#document-templates">Document Templates</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link first-link" href="#vacancies">Vacancies</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#search">
+                                    <img src="assets/media/search-normal.svg" alt="Search" class="search-icon">
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+            </nav>
+        </header>
+
+        <main>
+            <section id="hero" class="hero-section">
+                <div class="hero-slider">
+                    <div class="hero-slide active">
+                        <div class="hero-content">
+                            <h2>All News</h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="news-story" class="news-section container">
+                <div class="news-container">
+
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="assets/media/image1.jpeg" alt="News 1">
+                        </div>
+                        <div class="news-text">
+                            <span class="news-date">August 20, 2025</span>
+                            <h3 class="news-title">TowerXchange Africa 2025</h3>
+                            <p class="news-sub">Engineering the Power Behind Africa's Mobile Future. Africa’s growing
+                                connectivity needs demand smart,…</p>
+                        </div>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="assets/media/image2.jpeg" alt="News 2">
+                        </div>
+                        <div class="news-text">
+                            <span class="news-date">August 20, 2025</span>
+                            <h3 class="news-title">Panel Discussion: Who Will Power Africa's Networks?</h3>
+                            <p class="news-sub"><strong>Unpacking the Future of Energy Management in Africa</strong>
+                                Energy is the single most challenging and operationally complex aspect of telecom tower…
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="container">
+            <span>&copy;2024 PowerTech. All Rights Reserved.</span>
+            <div class="icons">
+                <a href="#youtube"> <i class="bi bi-youtube"></i> </a>
+                <a href="#web"> <i class="bi bi-globe"></i> </a>
+                <a href="#instagram"> <i class="bi bi-instagram"></i> </a>
+                <a href="#linkedin"> <i class="bi bi-linkedin"></i> </a>
+            </div>
+        </footer>
+        <div class="bottom-pattern-bar"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Sliding Panel -->
+    <div class="sliding-panel" id="slidingPanel">
+        <div class="panel-header">
+            <div class="panel-title" id="panelTitle">Panel</div>
+            <button class="close-btn" id="panelCloseBtn" aria-label="Close panel">
+                <img src="assets/media/close.svg" alt="Close" class="close-icon-btn">
+            </button>
+        </div>
+        <div class="panel-content" id="panelContent"></div>
+    </div>
+    <div class="app-overlay" id="appOverlay"></div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
