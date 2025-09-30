@@ -78,7 +78,7 @@ span#indicatorNumber {
     height: 0.6rem;
     background-color: #DC012C;
     border-radius: 50%;
-    border:0.063remsolid #fff;
+    border: 0.063remsolid #fff;
     box-shadow: 0 0 0 3px #f8f9fa;
 }
 
@@ -156,7 +156,7 @@ span#indicatorNumber {
     background-color: transparent !important;
     padding: 0;
     width: 100%;
-    z-index: 999;
+    z-index: 10001;
     position: absolute;
 }
 
@@ -262,7 +262,7 @@ span#indicatorNumber {
 header {
     position: absolute;
     width: 100%;
-    z-index: 1000;
+    z-index: 20000;
     background: transparent;
 }
 
@@ -281,7 +281,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 10003;
 }
 
 .dashboard-icon {
@@ -366,7 +366,7 @@ header {
 .notification-wrapper {
     position: absolute;
     right: 2.5rem;
-    top: 10rem;
+    top: 11rem;
     z-index: 999;
 }
 
@@ -714,7 +714,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom:0.063remsolid #e9ecef;
+    border-bottom: 0.063remsolid #e9ecef;
     padding-bottom: 15px;
     width: 100%;
 }
@@ -756,7 +756,8 @@ header {
     gap: 0.5rem;
     padding: 0.5rem;
     transition: all 0.3s ease;
-    border-bottom:0.063remsolid #f1f3f5;
+    border-bottom: 0.063rem solid #f1f3f5;
+    position: relative;
 }
 
 .news-item:last-child {
@@ -838,6 +839,7 @@ header {
     right: 3.2rem;
     transform: translateY(-50%);
     transition: all 0.3s ease;
+    z-index: 5;
 }
 
 
@@ -1090,7 +1092,7 @@ header {
     height: 2.25rem;
     visibility: hidden;
     border-radius: 50%;
-    border:0.063rem solid #ffffff50;
+    border: 0.063rem solid #ffffff50;
     background: rgba(255, 255, 255, 0.027);
     color: #ffffff;
     display: flex;
@@ -1556,7 +1558,7 @@ footer .icons a {
     height: calc(100vh - 3.125rem);
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
-    border-right:0.063remsolid rgba(0, 0, 0, 0.1);
+    border-right: 0.063remsolid rgba(0, 0, 0, 0.1);
     transform: translateX(-100%);
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     overflow: visible;
@@ -1595,7 +1597,7 @@ footer .icons a {
     top: 2rem;
     right: -4.25rem;
     background: rgba(255, 255, 255, 0.027);
-    border:0.063rem solid #ffffff50;
+    border: 0.063rem solid #ffffff50;
     width: 3.1875rem;
     height: 3.1875rem;
     border-radius: 50%;
@@ -1674,7 +1676,7 @@ img.close-icon-btn {
     border-radius: 0.9375rem;
     padding: 0.6rem;
     margin-bottom: 1rem;
-    border:0.063remsolid #e1e8ed;
+    border: 0.063remsolid #e1e8ed;
     transition: all 0.3s ease;
     cursor: pointer;
 }
@@ -1752,7 +1754,7 @@ img.close-icon-btn {
 
 .contact-info {
     padding-top: 15px;
-    border-top:0.063remsolid #e1e8ed;
+    border-top: 0.063remsolid #e1e8ed;
 }
 
 .contact-row {
@@ -1786,7 +1788,7 @@ a.contact-value {
 }
 
 .date-section {
-    border-bottom:0.063remsolid #e9ecef;
+    border-bottom: 0.063remsolid #e9ecef;
 }
 
 .date-section:last-child {
@@ -1811,7 +1813,7 @@ a.contact-value {
     display: flex;
     align-items: center;
     padding: 20px 24px;
-    border-bottom:0.063remsolid #f1f3f4;
+    border-bottom: 0.063remsolid #f1f3f4;
     transition: background-color 0.2s ease;
     background-color: rgba(255, 255, 255, 0.845);
 }
@@ -1827,7 +1829,7 @@ a.contact-value {
 .event-indicator {
     width: 4px;
     height: 48px;
-    border-radius:0.125rem;
+    border-radius: 0.125rem;
     margin-right: 1.25rem;
     flex-shrink: 0;
 }
@@ -1875,7 +1877,7 @@ a.contact-value {
 .time-end {
     font-size: 14px;
     color: #6c757d;
-    margin-top:0.125rem;
+    margin-top: 0.125rem;
 }
 
 .all-day {
@@ -2022,7 +2024,7 @@ a.contact-value {
 .poll-stats {
     margin-top: 1.25rem;
     padding-top: 1.25rem;
-    border-top:0.063remsolid #e9ecef;
+    border-top: 0.063remsolid #e9ecef;
     text-align: center;
     color: #6c757d;
     font-size: 14px;
@@ -2050,9 +2052,6 @@ a.contact-value {
 
 /* Responsive */
 @media (max-width: 1200px) {
-    .welcome-card {
-        height: 32rem;
-    }
 
     .profile-image {
         width: 7rem;
@@ -2074,6 +2073,14 @@ a.contact-value {
 }
 
 @media (max-width: 991.98px) {
+    .energy-paragraph {
+        padding: 0;
+    }
+
+    .energy-heading {
+        padding: 0;
+    }
+
     .news-item {
         flex-direction: column;
         min-height: auto;
@@ -2101,11 +2108,17 @@ a.contact-value {
     .read-more {
         right: 1.2rem;
         bottom: 1.2rem;
+        top: auto;
+        z-index: 10;
     }
 
     .gallery-content .count,
     .gallery-content .count.first-count {
-        top: -6.1rem;
+        top: -10.1rem;
+    }
+
+    .gallery-content .count.last-count {
+        top: -18rem;
     }
 
     .custom-navbar:after {
@@ -2122,7 +2135,7 @@ a.contact-value {
         width: 100%;
         text-align: center;
         padding: 1rem 0;
-        border-top:0.063remsolid rgba(255, 255, 255, 0.1);
+        border-top: 0.063remsolid rgba(255, 255, 255, 0.1);
     }
 
     .mobile-only .notification-link {
@@ -2135,13 +2148,25 @@ a.contact-value {
         top: 100%;
         left: 1rem;
         right: 1rem;
-        background: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(10px);
+        background: #ffffff;
+        backdrop-filter: none;
         padding: 1.5rem;
         border-radius: 0.5rem;
         margin-top: 0.5rem;
-        border:0.063remsolid rgba(255, 255, 255, 0.1);
-        z-index: 9999;
+        border: 0.063remsolid rgba(0, 0, 0, 0.06);
+        z-index: 10001;
+    }
+
+    .custom-navbar .navbar-collapse .nav-link {
+        color: #000000;
+    }
+
+    .custom-navbar .navbar-collapse .nav-link:hover {
+        color: #333333;
+    }
+
+    .custom-navbar .navbar-collapse .nav-link:after {
+        background-color: #000000;
     }
 
     .navbar-nav {
@@ -2169,7 +2194,7 @@ a.contact-value {
     .notification-wrapper {
         position: absolute;
         right: 2.5rem;
-        top: 10rem;
+        top: 11rem;
         z-index: 999;
     }
 
@@ -2192,7 +2217,7 @@ a.contact-value {
         height: 0.8rem;
         background-color: #DC012C;
         border-radius: 50%;
-        border:0.063remsolid #fff;
+        border: 0.063remsolid #fff;
         box-shadow: 0 0 0 3px #f8f9fa;
     }
 
@@ -2222,8 +2247,8 @@ a.contact-value {
     }
 
     .main-content {
-        margin-left: 3.75rem;
-        width: calc(100% - 3.75rem);
+        margin-left: 0;
+        width: 100%;
     }
 
     /* News Responsive */
@@ -2239,10 +2264,10 @@ a.contact-value {
 
     .welcome-card {
         width: 100%;
-        height: 23rem;
-        margin-bottom: 2rem;
+        height: 20rem;
         display: flex;
         flex-direction: column;
+        min-height: auto;
     }
 
     .welcome-page {
@@ -2324,6 +2349,35 @@ a.contact-value {
         gap: 1rem;
     }
 
+    /* Ensure all gallery items have height on tablet */
+    .energy-gallery .gallery-item {
+        width: 80%;
+        position: relative;
+        height: auto;
+        min-height: 10rem;
+    }
+
+    /* Tablet: background image defines layout; overlay sits above */
+    .energy-gallery .gallery-item img:nth-of-type(2) {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .energy-gallery .gallery-item img:nth-of-type(1) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
 
     .gallery-item.large {
         height: 30rem;
@@ -2376,7 +2430,7 @@ a.contact-value {
         width: 100%;
         justify-content: flex-end;
         padding-top: 1rem;
-        border-top:0.063remsolid rgba(255, 255, 255, 0.1);
+        border-top: 0.063remsolid rgba(255, 255, 255, 0.1);
     }
 
     .nav-item .nav-link i {
@@ -2391,10 +2445,6 @@ a.contact-value {
         gap: 0.5rem;
     }
 
-    .hero-content {
-        padding: 0 1.25rem;
-        bottom: 9.375rem;
-    }
 
     .hero-content h1 {
         font-size: 2.8rem;
@@ -2430,9 +2480,20 @@ a.contact-value {
     footer span {
         font-size: 0.875rem;
     }
+
+    .energy-gallery .gallery-item {
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
+
+    .energy-gallery .gallery-item,
+    .energy-gallery .gallery-item:nth-child(2),
+    .energy-gallery .gallery-item:nth-child(3) {
+        width: 100%;
+    }
+
     .news-item {
         padding: 1rem;
         margin-bottom: 1rem;
@@ -2449,11 +2510,6 @@ a.contact-value {
 
     .news-date {
         font-size: 0.7rem;
-    }
-
-    .welcome-card {
-        height: 30rem;
-        padding: 1rem;
     }
 
     .profile-image {
@@ -2485,7 +2541,6 @@ a.contact-value {
     }
 
     .hero-content {
-        bottom: 6rem;
         padding: 0 1.5rem;
         max-width: 100%;
         z-index: 9999;
@@ -2594,11 +2649,7 @@ a.contact-value {
         bottom: 1rem;
         right: 1rem;
         transform: none;
-    }
-
-
-    .welcome-card {
-        padding: 3.5rem;
+        z-index: 10;
     }
 
     .welcome-content h2 {
@@ -2632,6 +2683,47 @@ a.contact-value {
         height: 15.625rem;
     }
 
+    /* Energy gallery: stack items and ensure visibility on mobile */
+    .energy-gallery {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .energy-gallery .gallery-item {
+        position: relative;
+        height: auto;
+        min-height: 10rem;
+    }
+
+    /* Mobile: background image defines layout; overlay sits above */
+    .energy-gallery .gallery-item img:nth-of-type(2) {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 30rem;
+        object-fit: cover;
+    }
+
+    .energy-gallery .gallery-item img:nth-of-type(1) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Remove special sizing/margins for 2nd and 3rd items on mobile */
+    .energy-gallery .gallery-item:nth-child(2),
+    .energy-gallery .gallery-item:nth-child(3) {
+        margin-top: 0;
+        flex: initial;
+        height: auto;
+    }
+
     .gallery-content {
         padding: 1.5rem;
     }
@@ -2646,12 +2738,13 @@ a.contact-value {
     }
 
     .gallery-content .count.first-count {
-        top: -6.1rem;
+        top: -20.1rem;
     }
 
     .gallery-content .count {
         padding: 0.35rem 0.6rem;
         font-size: 0.875rem;
+        top: -20.1rem;
     }
 
     .view-all {
@@ -2685,11 +2778,13 @@ a.contact-value {
     .navbar-brand img {
         height: 3.9rem;
     }
+
 }
 
 @media (max-width: 480px) {
+
     .welcome-card {
-        height: 28rem;
+        height: 30rem;
         padding: 0.75rem;
     }
 
@@ -2734,7 +2829,8 @@ a.contact-value {
     }
 
     .hero-content {
-        bottom: 5rem;
+        padding-bottom: 1rem;
+        left: 0%;
     }
 
     .hero-content h2 {
@@ -2764,6 +2860,7 @@ a.contact-value {
     }
 
     .welcome-card {
+        margin-top: 0.5rem;
         min-height: 22rem;
         padding: 1.5rem;
     }
@@ -2801,6 +2898,10 @@ a.contact-value {
         padding: 0.6rem 2rem;
         font-size: 0.75rem;
     }
+
+    .container-fluid.navbar-container {
+        padding: initial;
+    }
 }
 
 
@@ -2834,11 +2935,11 @@ a.contact-value {
 /* Responsive */
 @media (max-width: 768px) {
     .sliding-panel {
-        width: 100vw;
+        display: none;
     }
 
     .side-nav {
-        width: 60px;
+        display: none;
     }
 
     .side-nav a {
