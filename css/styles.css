@@ -38,7 +38,8 @@ span#indicatorNumber {
     top: 3.125rem;
     height: calc(100vh - 3.125rem);
     width: 3.75rem;
-    background-color: #f9f9f9;
+    background-color: #fff;
+    border-right: 1px solid #e9ecef;
     z-index: 1000;
     padding: 0;
 }
