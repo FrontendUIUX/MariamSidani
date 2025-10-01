@@ -2121,7 +2121,7 @@ a.contact-value {
     }
 
     .gallery-content .count.last-count {
-        top: -18rem;
+        top: -9rem;
     }
 
     .custom-navbar:after {
@@ -2511,6 +2511,7 @@ a.contact-value {
 
     .energy-gallery .gallery-item {
         width: 100%;
+        height: 20rem;
     }
 }
 
@@ -2705,8 +2706,6 @@ a.contact-value {
 
     .energy-gallery .gallery-item {
         position: relative;
-        height: auto;
-        min-height: 10rem;
     }
 
     /* Mobile: background image defines layout; overlay sits above */
@@ -2735,7 +2734,6 @@ a.contact-value {
     .energy-gallery .gallery-item:nth-child(3) {
         margin-top: 0;
         flex: initial;
-        height: auto;
     }
 
     .gallery-content {
@@ -2752,13 +2750,12 @@ a.contact-value {
     }
 
     .gallery-content .count.first-count {
-        top: -20.1rem;
+        top: -6.1rem;
     }
 
     .gallery-content .count {
         padding: 0.35rem 0.6rem;
         font-size: 0.875rem;
-        top: -20.1rem;
     }
 
     .view-all {
