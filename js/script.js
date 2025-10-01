@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     direction: 'horizontal',
     loop: false,
     autoplay: false,
-    allowTouchMove: false,
+    allowTouchMove: true,
     effect: 'fade',
     fadeEffect: {
       crossFade: true
