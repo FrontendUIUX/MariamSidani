@@ -2192,8 +2192,8 @@ a.contact-value {
 
     .notification-wrapper {
         position: absolute;
-        right: 2.5rem;
-        top: 11rem;
+        right: 1rem;
+        top: 6rem;
         z-index: 999;
     }
 
@@ -2462,13 +2462,14 @@ a.contact-value {
         font-size: 2rem;
     }
 
-    
+
 }
 
 @media (max-width: 480px) {
-    .navbar-brand{
+    .navbar-brand {
         margin-right: 0;
     }
+
     .navbar-brand img {
         height: 2.5rem;
         width: auto;
@@ -2515,15 +2516,6 @@ a.contact-value {
     .energy-gallery .gallery-item:nth-child(2),
     .energy-gallery .gallery-item:nth-child(3) {
         width: 100%;
-    }
-
-    .news-item {
-        padding: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .news-image {
-        height: 10rem;
     }
 
     .news-text-content h3 {
@@ -2638,22 +2630,21 @@ a.contact-value {
     }
 
     .news-item {
-        flex-direction: column;
-        padding-bottom: 1.5rem;
-        margin-bottom: 1.5rem;
-        border-radius: 0.75rem;
-        background: rgba(248, 249, 250, 0.5);
-        padding: 1rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding: 0.1rem;
+    }
+
+    .news-list {
+        padding: 0.5rem 1.1rem 0.5rem 1.1rem;
     }
 
     .news-image {
-        width: 9rem;
+        /*  width: 9rem;
         height: 10rem;
         min-width: unset;
         border-radius: 0.5rem;
         overflow: hidden;
-        margin-bottom: 1rem;
+        margin-bottom: 1rem;*/
+        display: none;
     }
 
     .news-content {
@@ -2797,10 +2788,12 @@ a.contact-value {
     .navbar-brand img {
         height: 3rem;
     }
-    .custom-navbar .navbar-toggler{
+
+    .custom-navbar .navbar-toggler {
         height: 1.8rem;
     }
-    .navbar-toggler-icon{
+
+    .navbar-toggler-icon {
 
         width: 1em;
         height: 0.9rem;
