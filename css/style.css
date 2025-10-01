@@ -2803,6 +2803,9 @@ a.contact-value {
 }
 
 @media (max-width: 480px) {
+    .hero-section{
+        height: 22.5rem;
+    }
 
     .welcome-card {
         height: 30rem;
