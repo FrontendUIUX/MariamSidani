@@ -2466,6 +2466,29 @@ a.contact-value {
 }
 
 @media (max-width: 480px) {
+    .navbar-brand{
+        margin-right: 0;
+    }
+    .navbar-brand img {
+        height: 2.5rem;
+        width: auto;
+        padding-left: 0.5rem;
+    }
+
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.5rem;
+        font-size: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 0.25rem;
+    }
+
     footer {
         flex-direction: column;
         gap: 1rem;
@@ -2772,7 +2795,7 @@ a.contact-value {
     }
 
     .navbar-brand img {
-        height: 3.9rem;
+        height: 3rem;
     }
 
 }
