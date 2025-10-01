@@ -459,7 +459,8 @@ footer .icons {
     gap: 0.938rem;
 }
 
-footer .icons i {
+footer .icons i,
+footer .icons svg {
     color: white;
     cursor: pointer;
     background-color: #1f627d;
@@ -473,13 +474,19 @@ footer .icons i {
     transition: transform 0.3s, background-color 0.3s;
 }
 
-footer .icons i:hover {
+footer .icons i:hover,
+footer .icons svg:hover {
     background-color: #0099FF;
     transform: scale(1.1);
 }
 
 footer .icons a {
     text-decoration: none;
+}
+
+footer .icons svg {
+    width: 3.5rem;
+    height: 3.5rem;
 }
 
 footer span {
