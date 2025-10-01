@@ -1164,6 +1164,9 @@ section#news-story {
 
 /* Small devices (phones) */
 @media (max-width: 480px) {
+    .hero-section{
+      height:  22.1rem;
+    }
     .navbar-brand{
         margin-right: 0;
     }
