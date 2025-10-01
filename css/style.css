@@ -776,10 +776,17 @@ header {
 .news-content {
     flex: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     text-align: left;
     padding-left: 1rem;
+}
+
+.news-text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 @font-face {
@@ -815,23 +822,22 @@ header {
     font-display: swap;
 }
 
-.news-content h3 {
+.news-text-content h3 {
     font-size: 1.1rem;
     line-height: 1.5rem;
-    margin-right: 2rem;
+    margin-right: 1rem;
     font-family: 'Font', sans-serif;
     color: #212529;
     margin-bottom: 0;
 }
 
 .read-more {
-    display: block;
-    text-align: right;
-    position: absolute;
-    right: 3.2rem;
-    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
     transition: all 0.3s ease;
-    z-index: 5;
+    margin-left: 1rem;
 }
 
 
@@ -2094,17 +2100,14 @@ a.contact-value {
         padding: 0;
     }
 
-    .news-content h3 {
+    .news-text-content h3 {
         font-size: 1.1rem;
-        padding-right: 3rem;
+        padding-right: 1rem;
         margin: 0.5rem 0;
     }
 
     .read-more {
-        right: 1.2rem;
-        bottom: 1.2rem;
-        top: auto;
-        z-index: 10;
+        margin-left: 0.5rem;
     }
 
     .gallery-content .count,
@@ -2499,7 +2502,7 @@ a.contact-value {
         height: 10rem;
     }
 
-    .news-content h3 {
+    .news-text-content h3 {
         font-size: 0.95rem;
         line-height: 1.3;
     }
@@ -2633,19 +2636,15 @@ a.contact-value {
         padding: 1.25rem 0;
     }
 
-    .news-content h3 {
+    .news-text-content h3 {
         padding-right: 0;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         font-size: 0.95rem;
         line-height: 1.5;
     }
 
     .read-more {
-        top: auto;
-        bottom: 1rem;
-        right: 1rem;
-        transform: none;
-        z-index: 10;
+        margin-left: 0.5rem;
     }
 
     .welcome-content h2 {
