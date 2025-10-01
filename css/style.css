@@ -2797,6 +2797,14 @@ a.contact-value {
     .navbar-brand img {
         height: 3rem;
     }
+    .custom-navbar .navbar-toggler{
+        height: 1.8rem;
+    }
+    .navbar-toggler-icon{
+
+        width: 1em;
+        height: 0.9rem;
+    }
 
 }
 
