@@ -716,7 +716,7 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
   // Select all news items
-  document.querySelectorAll(".news-item").forEach(item => {
+  document.querySelectorAll(".news-left, .welcome-card.credit-card.glare").forEach(item => {
       gsap.from(item, {
           scrollTrigger: {
               trigger: item,
@@ -725,7 +725,7 @@ document.addEventListener("DOMContentLoaded", () => {
           },
           x: -150,
           opacity: 0,
-          duration: 0.6,
+          duration: 2,
           ease: "power2.out"
       });
   });
