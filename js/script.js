@@ -70,10 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
     loop: false,
     autoplay: false,
     allowTouchMove: true,
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true
-    },
+    effect: 'slide',
+    slidesPerView: 1,
+    spaceBetween: 0,
     navigation: {
       nextEl: '.welcome-nav-next',
       prevEl: '.welcome-nav-prev',
@@ -559,5 +558,175 @@ document.addEventListener('DOMContentLoaded', () => {
       img.addEventListener('load', () => msnry.layout());
       img.addEventListener('error', () => msnry.layout());
     }
+  });
+});
+
+//gsap
+document.addEventListener("DOMContentLoaded", () => {
+  // Check if elements exist before initializing
+  const animateElement = document.querySelector('.animate');
+  const animate2Element = document.querySelector('.animate2');
+
+  if (animateElement) {
+    let typeSplit = new SplitType('.animate', {
+        types: 'lines, words, chars',
+        tagName: 'span'
+    });
+
+    gsap.from('.animate .word', {
+        scrollTrigger: {
+            trigger: '.animate',
+            start: 'top 80%',
+            toggleActions: 'play none none restart',
+        },
+        y: '100%',
+        opacity: 1,
+        duration: 1,
+        ease: 'sine.in',
+        stagger: 0.1,
+    });
+  }
+
+  if (animate2Element) {
+    let typeSplit2 = new SplitType('.animate2', {
+        types: 'lines, words, chars',
+        tagName: 'span'
+    });
+
+    gsap.from('.animate2 .word', {
+        scrollTrigger: {
+            trigger: '.animate2',
+            start: 'top 80%',
+            toggleActions: 'play none none restart',
+        },
+        y: '110%',
+        opacity: 1,
+        rotationZ: '10',
+        duration: 0.5,
+        ease: 'sine.in',
+        stagger: 0.1,
+    });
+  }
+
+});
+
+//hover gsap
+document.addEventListener("DOMContentLoaded", () => {
+  const $card = document.querySelector(".credit-card");
+  
+  // Exit if card not found
+  if (!$card) return;
+
+  let bounds;
+  let lastShadowOffsetX = 0;
+  let lastShadowOffsetY = 0;
+  let lastShadowBlur = 0;
+
+  function moveToMouse(e) {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+      const leftX = mouseX - bounds.x;
+      const topY = mouseY - bounds.y;
+      const center = {
+          x: leftX - bounds.width / 2,
+          y: topY - bounds.height / 2
+      };
+
+      const distance = Math.sqrt(center.x ** 2 + center.y ** 2);
+      const rotationX = center.y / 50;
+      const rotationY = -center.x / 50;
+
+      const shadowOffsetX = -rotationY * 5;
+      const shadowOffsetY = rotationX * 5;
+      const shadowBlur = 20 + distance / 120;
+
+      lastShadowOffsetX = shadowOffsetX;
+      lastShadowOffsetY = shadowOffsetY;
+      lastShadowBlur = shadowBlur;
+
+      gsap.to($card, {
+          scale: 1.03,
+          rotationX: rotationX,
+          rotationY: rotationY,
+          transformPerspective: 500,
+          ease: "power2.out",
+          boxShadow: `${shadowOffsetX}px ${shadowOffsetY}px ${shadowBlur}px 6px rgba(72, 65, 56, .4)`
+      });
+
+      const glareElement = $card.querySelector(".glare");
+      if (glareElement) {
+          gsap.to(glareElement, {
+              autoAlpha: 1,
+              backgroundImage: `
+                  radial-gradient(
+                      circle at ${center.x * 2 + bounds.width / 2}px ${center.y * 2 + bounds.height / 2}px,
+                      rgba(255, 255, 255, 0.33),
+                      rgba(0, 0, 0, 0.06)
+                  )
+              `
+          });
+      }
+  }
+
+  $card.addEventListener("mouseenter", () => {
+      bounds = $card.getBoundingClientRect();
+      document.addEventListener("mousemove", moveToMouse);
+      gsap.to($card, {
+          scale: 1.03,
+          rotationX: 0,
+          rotationY: 0,
+          duration: 0.6
+      });
+  });
+
+  $card.addEventListener("mouseleave", () => {
+      document.removeEventListener("mousemove", moveToMouse);
+
+      gsap.to($card, {
+          scale: 1,
+          rotationX: 0,
+          rotationY: 0,
+          duration: 0.6,
+          ease: "power2.out"
+      });
+
+      gsap.to($card, {
+          boxShadow: `${lastShadowOffsetX}px ${lastShadowOffsetY}px ${lastShadowBlur}px 0 rgba(72, 65, 56, .4)`,
+          duration: 0.3,
+          ease: "power3.out",
+          onComplete: () => {
+              gsap.to($card, {
+                  boxShadow: `0px 0px ${lastShadowBlur}px 0 rgba(0, 0, 0, 0)`,
+                  duration: 1.2
+              });
+          }
+      });
+
+      const glareElement = $card.querySelector(".glare");
+      if (glareElement) {
+          gsap.to(glareElement, {
+              autoAlpha: 0,
+              duration: 0.6
+          });
+      }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Select all news items
+  document.querySelectorAll(".news-item").forEach(item => {
+      gsap.from(item, {
+          scrollTrigger: {
+              trigger: item,
+              start: "top 90%",
+              toggleActions: "play none none reset",
+          },
+          x: -150,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.out"
+      });
   });
 });
