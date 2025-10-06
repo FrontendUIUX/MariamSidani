@@ -17,17 +17,17 @@
     margin-bottom: 1rem;             /* space below the title */
 }
 html:not(.designer) [name*="CompetitorsLabel"] {
-    background-color: #fde8e4;   /* box background */
-    border: 1px solid #f5c6c2;   /* subtle border */
-    border-radius: 10px;          /* rounded corners */
-    padding: 15px 20px;           /* spacing inside box */
+    background-color: #f3e1de;   /* your box color */
+    border: 1px solid #e0bebe;   /* optional subtle border */
+    border-radius: 10px;         /* rounded corners */
+    padding: 15px 20px;          /* spacing inside box */
     font-family: 'Segoe UI', sans-serif;
     color: #333;
     line-height: 1.6;
 }
 
 html:not(.designer) [name*="CompetitorsLabel"] .box-heading {
-    font-weight: 600;  /* like a heading */
+    font-weight: 600;    /* bold like heading */
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: #555;
@@ -41,12 +41,3 @@ html:not(.designer) [name*="CompetitorsLabel"] .box-list {
 html:not(.designer) [name*="CompetitorsLabel"] .box-list li {
     margin-bottom: 5px;
 }
-
-
-
-
-
-
-
-
-
