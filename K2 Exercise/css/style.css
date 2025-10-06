@@ -71,8 +71,9 @@ html:not(.designer) .save-draft {
 }
 
 html:not(.designer) .save-draft .save-icon {
-    width: 24px;                 /* icon width */
-    height: 24px;                /* icon height */
+    width: 14px;                 /* icon width */
+    height: 14px;                /* icon height */
     margin-right: 8px;           /* space between icon and text */
 }
+
 
