@@ -19,31 +19,15 @@
 /* Container box */
 html:not(.designer) [name*="competitors-box"] {
     background-color: #f3e1de;   /* box color */
-    border: 1px solid #e0bebe;   /* optional border */
+    border: 1px solid #e0bebe;   /* border */
     border-radius: 10px;         /* rounded corners */
     padding: 15px 20px;
     font-family: 'Segoe UI', sans-serif;
-    color: #333;
+    color: #002134;              /* text color */
     line-height: 1.6;
+    font-weight: 500;            /* makes title + bullets readable */
 }
 
-/* Heading inside the box */
-html:not(.designer) [name*="competitors-box"] .box-heading {
-    font-weight: 600;    /* bold like heading */
-    font-size: 1.2rem;  
-    margin-bottom: 10px;
-    color: #555;
-}
-
-/* Bullet list */
-html:not(.designer) [name*="competitors-box"] .box-list {
-    padding-left: 20px;
-    margin: 0;
-}
-
-html:not(.designer) [name*="competitors-box"] .box-list li {
-    margin-bottom: 5px;
-}
 
 
 html:not(.designer) .Services {
@@ -75,5 +59,6 @@ html:not(.designer) .save-draft .save-icon {
     height: 14px;                /* icon height */
     margin-right: 8px;           /* space between icon and text */
 }
+
 
 
