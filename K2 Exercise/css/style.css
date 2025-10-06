@@ -1,4 +1,4 @@
-[name*="TitleForm"] {
+html:not(.designer) [name*="TitleForm"] {
     color: #F54927 !important;       /* dark gray text */
     font-size: 1.5rem !important;    /* bigger than normal text */
     font-family: 'Segoe UI', sans-serif;  /* clean modern font */
@@ -7,6 +7,7 @@
     text-align: center;              /* center the title */
     margin-bottom: 1rem;             /* space below the title */
 }
+
 
 
 
