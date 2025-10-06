@@ -1,5 +1,9 @@
-html:not(.designer) [name*="TitleForm"]{
-    color:var(--black)!important;
-    font-size:1rem!important;
-    font-family: var(--regularFont);
+html:not(.designer) [name*="MyTitle"] {
+    color: #1a1a1a !important;       /* dark gray text */
+    font-size: 1.5rem !important;    /* bigger than normal text */
+    font-family: 'Segoe UI', sans-serif;  /* clean modern font */
+    font-weight: 700 !important;     /* bold */
+    text-transform: uppercase;       /* all caps */
+    text-align: center;              /* center the title */
+    margin-bottom: 1rem;             /* space below the title */
 }
