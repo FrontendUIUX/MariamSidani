@@ -51,25 +51,23 @@ html:not(.designer) .Services {
     color: #333;                 /* text color */
     line-height: 1.5;
 }
+
+
 html:not(.designer) .save-draft {
     display: inline-flex;
     align-items: center;
-    background-color: #fdfcfa;   /* optional box color */
+    background-color: #fdfcfa;   /* box background */
     border: 1px solid #eee;      /* optional border */
-    border-radius: 8px;
-    padding: 5px 10px;
+    border-radius: 8px;          /* rounded corners */
+    padding: 5px 10px;           /* spacing inside box */
     font-family: 'Segoe UI', sans-serif;
     font-weight: 500;
-    color: #333;
-    cursor: pointer;              /* optional, if clickable */
+    color: #002134;              /* text color */
+    cursor: pointer;             /* makes it look clickable */
 }
 
 html:not(.designer) .save-draft .save-icon {
-    width: 16px;                  /* icon size */
-    height: 16px;
-    margin-right: 6px;            /* space between icon and text */
+    width: 24px;                 /* icon width */
+    height: 24px;                /* icon height */
+    margin-right: 8px;           /* space between icon and text */
 }
-
-
-
-
