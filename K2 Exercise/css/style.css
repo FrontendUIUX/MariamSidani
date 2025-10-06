@@ -1,4 +1,4 @@
-[name*="MyTitle"] {
+[name*="TitleForm"] {
     color: #1a1a1a !important;       /* dark gray text */
     font-size: 1.5rem !important;    /* bigger than normal text */
     font-family: 'Segoe UI', sans-serif;  /* clean modern font */
@@ -7,4 +7,5 @@
     text-align: center;              /* center the title */
     margin-bottom: 1rem;             /* space below the title */
 }
+
 
