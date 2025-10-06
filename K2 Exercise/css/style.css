@@ -1,5 +1,5 @@
 [name*="TitleForm"] {
-    color: red !important;       /* dark gray text */
+    color: #F54927 !important;       /* dark gray text */
     font-size: 1.5rem !important;    /* bigger than normal text */
     font-family: 'Segoe UI', sans-serif;  /* clean modern font */
     font-weight: 700 !important;     /* bold */
@@ -7,6 +7,7 @@
     text-align: center;              /* center the title */
     margin-bottom: 1rem;             /* space below the title */
 }
+
 
 
 
