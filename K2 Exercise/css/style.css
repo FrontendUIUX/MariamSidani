@@ -57,13 +57,10 @@ html:not(.designer) [name*="ServiceStepsBox"] {
 
 html:not(.designer) .save-draft {
     display: inline-flex;
-    align-items: center;
-    background-color: #fdfcfa;   
-    border: 1px solid #eee;      
-    border-radius: 8px;          
+    align-items: center;         
     padding: 5px 10px;           
     font-family: 'Segoe UI', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     color: #002134;             
     cursor: pointer;            
 }
@@ -73,6 +70,7 @@ html:not(.designer) .save-draft .save-icon {
     height: 14px;              
     margin-right: 0;       /* no space between icon and text */
 }
+
 
 
 
