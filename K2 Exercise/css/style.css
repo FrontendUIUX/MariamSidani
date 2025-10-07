@@ -55,8 +55,6 @@ html:not(.designer) [name*="ServiceStepsBox"] {
     width:54%;
 }
 
-
-
 html:not(.designer) .save-draft {
     display: inline-flex;
     align-items: center;
@@ -72,8 +70,10 @@ html:not(.designer) .save-draft {
 
 html:not(.designer) .save-draft .save-icon {
     width: 14px;               
-    height: 14px;                
+    height: 14px;              
+    margin-right: 0;       /* no space between icon and text */
 }
+
 
 
 
