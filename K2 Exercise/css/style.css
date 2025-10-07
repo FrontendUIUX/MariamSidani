@@ -47,11 +47,12 @@ html:not(.designer) [name*="ServiceStepsBox"] {
     padding: 15px 20px;       
     font-family: 'Segoe UI', sans-serif;
     color: #002134;              
-    line-height: 1.6;
+    line-height: 2.6;
     font-weight: 500;
     display: block;
     white-space: normal;
     word-wrap: break-word;
+    width:54%;
 }
 
 
@@ -73,6 +74,7 @@ html:not(.designer) .save-draft .save-icon {
     width: 14px;               
     height: 14px;                
 }
+
 
 
 
