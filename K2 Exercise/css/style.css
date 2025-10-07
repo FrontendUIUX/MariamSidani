@@ -74,6 +74,11 @@ html:not(.designer) .save-draft .save-icon {
     margin-right: 0;       /* no space between icon and text */
 }
 
+html:not(.designer) [name*="cancel-button"] {
+    border: 1px solid var(--Navy-blue) !important;
+    color: var(--Navy-blue) !important;
+    background-color: transparent;
+}
 
 
 
