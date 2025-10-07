@@ -10,12 +10,11 @@ html:not(.designer) .title {
 
 html:not(.designer) .subtitle {
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 1.9rem;
     color: #707070;
     font-family: 'Segoe UI', sans-serif;
     text-transform: none;   /* keep normal text */
     text-align: center;
-    margin-bottom: 1rem;
 }
 
 /* Container box */
@@ -78,6 +77,7 @@ html:not(.designer) .save-draft .save-icon {
     color: var(--Navy-blue) !important;
     background-color: transparent;
 }
+
 
 
 
