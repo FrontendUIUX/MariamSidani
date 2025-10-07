@@ -1,52 +1,52 @@
 [name*="TitleForm"] {
-    color: #334a54 !important;       /* dark gray text */
-    font-size: 1.5rem !important;    /* bigger than normal text */
-    font-family: 'Segoe UI', sans-serif;  /* clean modern font */
-    font-weight: 700 !important;     /* bold */
-    text-transform: uppercase;       /* all caps */
-    text-align: center;              /* center the title */
-    margin-bottom: 1rem;             /* space below the title */
+    color: #334a54 !important;       
+    font-size: 1.5rem !important;    
+    font-family: 'Segoe UI', sans-serif; 
+    font-weight: 700 !important;     
+    text-transform: uppercase;       
+    text-align: center;              
+    margin-bottom: 1rem;             
 }
 [name*="subtitle"] {
-    color: #bcbcba !important;       /* dark gray text */
-    font-size: 1.5rem !important;    /* bigger than normal text */
-    font-family: 'Segoe UI', sans-serif;  /* clean modern font */
-        /* bold */
-    text-transform: uppercase;       /* all caps */
-    text-align: center;              /* center the title */
-    margin-bottom: 1rem;             /* space below the title */
+    color: #bcbcba !important;       
+    font-size: 1.5rem !important;    
+    font-family: 'Segoe UI', sans-serif; 
+    text-transform: uppercase;       
+    text-align: center;             
+    margin-bottom: 1rem;             
 }
 /* Container box */
 html:not(.designer) [name*="competitors-box"] {
-    background-color: #f3e1de;   /* box color */
-    border: 1px solid #e0bebe;   /* border */
-    border-radius: 10px;         /* rounded corners */
+    background-color: #f3e1de;   
+    border: 1px solid #e0bebe;   
+    border-radius: 10px;         
     padding: 15px 20px;
     font-family: 'Segoe UI', sans-serif;
-    color: #002134;              /* text color */
+    color: #002134;            
     line-height: 1.6;
-    font-weight: 500;            /* makes title + bullets readable */
+    font-weight: 500;            
 }
 
 
 
 html:not(.designer) .Services {
-    background-color: #fdfcfa;   /* background color */
-    border: 1px solid #eee;      /* optional subtle border */
-    border-radius: 10px;         /* rounded corners */
-    padding: 15px 20px;          /* spacing inside the box */
+    background-color: #fdfcfa;   
+    border: 1px solid #eee;     
+    border-radius: 10px;         
+    padding: 15px 20px;        
     font-family: 'Segoe UI', sans-serif;
-    color: #333;                 /* text color */
+    color: #333;                 
     line-height: 1.5;
 }
 
+/* Style the ServiceStepsBox like competitors-box */
 html:not(.designer) [name*="ServiceStepsBox"] {
-    background-color: #f3e1de;   /* same as competitors box color */
-    border: 1px solid #e0bebe;   /* same border tone */
-    border-radius: 10px;         /* rounded corners */
-    padding: 15px 20px;          /* inner spacing */
+    background-color: #f3e1de;   
+    border: 1px solid #e0bebe;  
+    border-radius: 10px;        
+    padding: 15px 20px;       
     font-family: 'Segoe UI', sans-serif;
-    color: #002134;              /* dark text color */
+    color: #002134;              
     line-height: 1.6;
     font-weight: 500;
     display: block;
@@ -55,24 +55,25 @@ html:not(.designer) [name*="ServiceStepsBox"] {
 }
 
 
+
 html:not(.designer) .save-draft {
     display: inline-flex;
     align-items: center;
-    background-color: #fdfcfa;   /* box background */
-    border: 1px solid #eee;      /* optional border */
-    border-radius: 8px;          /* rounded corners */
-    padding: 5px 10px;           /* spacing inside box */
+    background-color: #fdfcfa;   
+    border: 1px solid #eee;      
+    border-radius: 8px;          
+    padding: 5px 10px;           
     font-family: 'Segoe UI', sans-serif;
     font-weight: 500;
-    color: #002134;              /* text color */
-    cursor: pointer;             /* makes it look clickable */
+    color: #002134;             
+    cursor: pointer;            
 }
 
 html:not(.designer) .save-draft .save-icon {
-    width: 14px;                 /* icon width */
-    height: 14px;                /* icon height */
-    margin-right: 8px;           /* space between icon and text */
+    width: 14px;               
+    height: 14px;                
 }
+
 
 
 
