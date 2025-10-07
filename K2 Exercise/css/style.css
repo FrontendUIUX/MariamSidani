@@ -8,7 +8,7 @@
     margin-bottom: 1rem;             
 }
 [name*="subtitle"] {
-    color: #bcbcba !important;       
+    color: #939291 !important;       
     font-size: 1.5rem !important;    
     font-family: 'Segoe UI', sans-serif; 
     text-transform: uppercase;       
@@ -74,6 +74,7 @@ html:not(.designer) .save-draft .save-icon {
     width: 14px;               
     height: 14px;                
 }
+
 
 
 
