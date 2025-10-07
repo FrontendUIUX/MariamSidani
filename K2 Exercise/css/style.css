@@ -18,7 +18,8 @@ html:not(.designer) .subtitle {
 }
 
 /* Container box */
-html:not(.designer) [name*="competitors-box"] {
+/* Box 1 */
+html:not(.designer) [name*="competitor-box-1"] {
     background-color: #f3e1de;   
     border: 1px solid #e0bebe;   
     border-radius: 10px;         
@@ -26,10 +27,24 @@ html:not(.designer) [name*="competitors-box"] {
     font-family: 'Segoe UI', sans-serif;
     color: #002134;            
     line-height: 1.6;
-    font-weight: 500;   
-    display: inline-block;   
-    margin-right: 15px;      
-    vertical-align: top;     
+    font-weight: 500;
+}
+
+/* Box 2 */
+html:not(.designer) [name*="competitor-box-2"] {
+    background-color: #e1f3de;   /* slightly different color (optional) */ 
+    border: 1px solid #bedeae;   
+    border-radius: 10px;         
+    padding: 15px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #002134;            
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Optional: Add a bit of spacing between the two cells */
+html:not(.designer) td {
+    padding-right: 8px; /* adds space between cells */
 }
 
 
@@ -81,6 +96,7 @@ html:not(.designer) .save-draft .save-icon {
     color: var(--Navy-blue) !important;
     background-color: transparent;
 }
+
 
 
 
