@@ -1,31 +1,23 @@
-[name*="TitleForm"] {
-    color: #334a54 !important;       
-    font-size: 1.5rem !important;    
-    font-family: 'Segoe UI', sans-serif; 
-    font-weight: 700 !important;     
-    text-transform: uppercase;       
-    text-align: center;              
-    margin-bottom: 1rem;             
-}
 html:not(.designer) .title {
-    font-weight: 600;
-    font-size: 1rem;
-    color: #002134;
-    margin-bottom: 5px; /* space between title and subtitle */
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #334a54;
+    font-family: 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.5rem; /* spacing to subtitle */
 }
-[name*="subtitle"] {
-    color: #707070 !important;       
-    font-size: 1.5rem !important;    
-    font-family: 'Segoe UI', sans-serif; 
-    text-transform: uppercase;       
-    text-align: center;             
-    margin-bottom: 1rem;             
-}
+
 html:not(.designer) .subtitle {
     font-weight: 400;
     font-size: 0.9rem;
-    color: #555;
+    color: #707070;
+    font-family: 'Segoe UI', sans-serif;
+    text-transform: none;   /* keep normal text */
+    text-align: center;
+    margin-bottom: 1rem;
 }
+
 /* Container box */
 html:not(.designer) [name*="competitors-box"] {
     background-color: #f3e1de;   
@@ -81,6 +73,7 @@ html:not(.designer) .save-draft .save-icon {
     height: 14px;              
     margin-right: 0;       /* no space between icon and text */
 }
+
 
 
 
