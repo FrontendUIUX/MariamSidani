@@ -18,7 +18,6 @@ html:not(.designer) .subtitle {
 }
 
 /* Container box */
-/* Style for both competitor boxes */
 html:not(.designer) [name*="competitors-box"] {
     background-color: #f3e1de;   
     border: 1px solid #e0bebe;   
@@ -86,6 +85,7 @@ html:not(.designer) .save-draft .save-icon {
     color: var(--Navy-blue) !important;
     background-color: transparent;
 }
+
 
 
 
