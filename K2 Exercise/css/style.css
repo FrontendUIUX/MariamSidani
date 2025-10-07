@@ -18,18 +18,25 @@ html:not(.designer) .subtitle {
 }
 
 /* Container box */
+/* Style for both competitor boxes */
 html:not(.designer) [name*="competitors-box"] {
     background-color: #f3e1de;   
     border: 1px solid #e0bebe;   
     border-radius: 10px;         
-    padding: 15px 20px;
+    padding: 8px 12px;          /* smaller padding = smaller box */
     font-family: 'Segoe UI', sans-serif;
     color: #002134;            
-    line-height: 1.6;
+    line-height: 1.4;           /* slightly tighter text */
     font-weight: 500;            
-    width: 100%;
-    box-sizing: border-box;
+    width: auto;                /* let the box shrink to fit content */
+    display: inline-block;      /* keep them side by side */
+    vertical-align: top;        
 }
+
+html:not(.designer) td {
+    padding-right: 4px;         /* smaller gap between the boxes */
+}
+
 
 
 
@@ -79,6 +86,7 @@ html:not(.designer) .save-draft .save-icon {
     color: var(--Navy-blue) !important;
     background-color: transparent;
 }
+
 
 
 
