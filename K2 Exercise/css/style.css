@@ -40,6 +40,20 @@ html:not(.designer) .Services {
     line-height: 1.5;
 }
 
+html:not(.designer) [name*="ServiceStepsBox"] {
+    background-color: #f3e1de;   /* same as competitors box color */
+    border: 1px solid #e0bebe;   /* same border tone */
+    border-radius: 10px;         /* rounded corners */
+    padding: 15px 20px;          /* inner spacing */
+    font-family: 'Segoe UI', sans-serif;
+    color: #002134;              /* dark text color */
+    line-height: 1.6;
+    font-weight: 500;
+    display: block;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
 
 html:not(.designer) .save-draft {
     display: inline-flex;
@@ -59,6 +73,7 @@ html:not(.designer) .save-draft .save-icon {
     height: 14px;                /* icon height */
     margin-right: 8px;           /* space between icon and text */
 }
+
 
 
 
