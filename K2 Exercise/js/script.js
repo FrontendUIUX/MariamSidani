@@ -7,5 +7,24 @@ $(document).ready(function () {
   4- Testing & Validation - Verify that all features are working correctly.<br>
   5- Optimization & Fine-Tuning - Enhance speed, usability, and security based on testing results.
   `;
-  $('[name*="ServiceStepsBox"]').html(text);
+
+  var $el = $('[name*="ServiceStepsBox"]');
+
+  // Inject the text
+  $el.html(text);
+
+  // Apply the style directly
+  $el.css({
+    "background-color": "#f3e1de",
+    "border": "1px solid #e0bebe",
+    "border-radius": "10px",
+    "padding": "15px 20px",
+    "font-family": "'Segoe UI', sans-serif",
+    "color": "#002134",
+    "line-height": "1.6",
+    "font-weight": "500",
+    "display": "block",
+    "white-space": "normal",
+    "word-wrap": "break-word"
+  });
 });
