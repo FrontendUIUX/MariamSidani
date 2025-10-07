@@ -7,6 +7,12 @@
     text-align: center;              
     margin-bottom: 1rem;             
 }
+html:not(.designer) .title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #002134;
+    margin-bottom: 5px; /* space between title and subtitle */
+}
 [name*="subtitle"] {
     color: #707070 !important;       
     font-size: 1.5rem !important;    
@@ -14,6 +20,11 @@
     text-transform: uppercase;       
     text-align: center;             
     margin-bottom: 1rem;             
+}
+html:not(.designer) .subtitle {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #555;
 }
 /* Container box */
 html:not(.designer) [name*="competitors-box"] {
@@ -70,6 +81,7 @@ html:not(.designer) .save-draft .save-icon {
     height: 14px;              
     margin-right: 0;       /* no space between icon and text */
 }
+
 
 
 
