@@ -92,7 +92,7 @@ html:not(.designer) .save-draft .save-icon {
     padding: 2.5rem;
     border-radius: 1.25rem;
     box-shadow: 0 0.625rem 2.5rem rgba(0, 0, 0, 0.1);
-    max-width: 31.25rem;
+    max-width: 50.25rem;
     margin: auto;
 }
 
@@ -161,4 +161,5 @@ html:not(.designer) .save-draft .save-icon {
     margin-top: 0.125rem;
     font-weight: 600;
 }
+
 
