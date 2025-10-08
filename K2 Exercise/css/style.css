@@ -97,26 +97,28 @@ body {
     background: #faf2ed;
 }
 
-.container {
+/* Scope chart styles to your Data Label */
+[name*="ChartContainer"] .container {
     background: #fefdfb;
     padding: 2.5rem;
     border-radius: 1.25rem;
     box-shadow: 0 0.625rem 2.5rem rgba(0, 0, 0, 0.1);
     max-width: 31.25rem;
+    margin: auto;
 }
 
-h2 {
+[name*="ChartContainer"] h2 {
     margin: 0 0 -3rem 0;
     font-size: 1.5rem;
     font-weight: 600;
     color: #2d3748;
 }
 
-#chart {
+[name*="ChartContainer"] #chart {
     position: relative;
 }
 
-.center-text {
+[name*="ChartContainer"] .center-text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -125,25 +127,25 @@ h2 {
     pointer-events: none;
 }
 
-.total-number {
+[name*="ChartContainer"] .total-number {
     font-size: 3rem;
     font-weight: 700;
     color: #2d3748;
     margin: 0;
 }
 
-.total-label {
+[name*="ChartContainer"] .total-label {
     font-size: 0.875rem;
     color: #718096;
     margin: 0.3125rem 0 0 0;
 }
 
-.arc-segment {
+[name*="ChartContainer"] .arc-segment {
     transition: opacity 0.3s;
     cursor: pointer;
 }
 
-.label-box {
+[name*="ChartContainer"] .label-box {
     background: white;
     padding: 0.4375rem 0.1rem;
     border-radius: 0.5rem;
@@ -152,37 +154,21 @@ h2 {
     min-width: 7.5rem;
 }
 
-.label-value {
+[name*="ChartContainer"] .label-value {
     font-size: 1.125rem;
     font-weight: 700;
     color: #2d3748;
     margin: 0;
 }
 
-.label-percent {
+[name*="ChartContainer"] .label-percent {
     font-size: 0.6875rem;
     color: #718096;
 }
 
-.label-name {
+[name*="ChartContainer"] .label-name {
     font-size: 0.75rem;
     color: #4a5568;
     margin-top: 0.125rem;
     font-weight: 600;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
