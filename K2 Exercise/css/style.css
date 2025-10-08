@@ -87,6 +87,90 @@ html:not(.designer) .save-draft .save-icon {
 }
 
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #faf2ed;
+}
+
+.container {
+    background: #fefdfb;
+    padding: 2.5rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 0.625rem 2.5rem rgba(0, 0, 0, 0.1);
+    max-width: 31.25rem;
+}
+
+h2 {
+    margin: 0 0 -3rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+#chart {
+    position: relative;
+}
+
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+}
+
+.total-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0;
+}
+
+.total-label {
+    font-size: 0.875rem;
+    color: #718096;
+    margin: 0.3125rem 0 0 0;
+}
+
+.arc-segment {
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.label-box {
+    background: white;
+    padding: 0.4375rem 0.1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    min-width: 7.5rem;
+}
+
+.label-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0;
+}
+
+.label-percent {
+    font-size: 0.6875rem;
+    color: #718096;
+}
+
+.label-name {
+    font-size: 0.75rem;
+    color: #4a5568;
+    margin-top: 0.125rem;
+    font-weight: 600;
+}
+
 
 
 
