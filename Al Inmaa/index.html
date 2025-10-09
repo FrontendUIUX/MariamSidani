@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Status Chart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #faf2ed;
+        }
+
+        .container {
+            background: #fefdfb;
+            padding: 2.5rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 0.625rem 2.5rem rgba(0, 0, 0, 0.1);
+            max-width: 37.5rem;
+        }
+
+        h2 {
+            margin: 0 0 -3rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        #chart {
+            position: relative;
+        }
+
+        .center-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .total-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin: 0;
+        }
+
+        .total-label {
+            font-size: 0.875rem;
+            color: #718096;
+            margin: 0.3125rem 0 0 0;
+        }
+
+        .arc-segment {
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+
+
+        .label-box {
+            background: white;
+            padding: 0.4375rem 0.1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+            pointer-events: none;
+            min-width: 7.5rem;
+        }
+
+        .label-value {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin: 0;
+        }
+
+        .label-percent {
+            font-size: 0.6875rem;
+            color: #718096;
+        }
+
+        .label-name {
+            font-size: 0.75rem;
+            color: #4a5568;
+            margin-top: 0.125rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Overview</h2>
+        <div id="chart">
+            <svg id="donut-chart"></svg>
+            <div class="center-text">
+                <div class="total-number">5,238</div>
+                <div class="total-label">Total Requests</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data with separate arc length and display values
+        const data = [
+
+            {
+                label: 'In-Progress',
+                displayValue: 419,
+                color: '#f5d0a8'
+            },
+            {
+                label: 'Closed',
+                displayValue: 4104,
+                color: '#9b87f5'
+            },
+            {
+                label: 'Pending',
+                displayValue: 628,
+                color: '#ff9b8a'
+            }
+        ];
+
+        // Calculate total for display percentage
+        const totalDisplay = data.reduce((sum, d) => sum + d.displayValue, 0);
+
+        // Chart dimensions
+        const width = 500;
+        const height = 500;
+        const radius = Math.min(width, height) / 2 - 100;
+        const donutWidth = 55;
+
+        // SVG
+        const svg = d3.select('#donut-chart')
+            .attr('width', width)
+            .attr('height', height)
+            .append('g')
+            .attr('transform', `translate(${width / 2}, ${height / 2})`);
+
+        // arc generator
+        const arc = d3.arc()
+            .innerRadius(radius - donutWidth + 20)
+            .outerRadius(radius)
+            .padAngle(0.05)
+            .cornerRadius(8);
+
+        // pie layout - Use displayValue for arc size
+        const pie = d3.pie()
+            .value(d => d.displayValue)  // ← Controls arc length
+            .sort(null)
+            .startAngle(-Math.PI / 2)
+            .endAngle(3 * Math.PI / 2);
+
+        // Create arcs
+        const arcs = svg.selectAll('.arc')
+            .data(pie(data))
+            .enter()
+            .append('g')
+            .attr('class', 'arc');
+
+        arcs.append('path')
+            .attr('class', 'arc-segment')
+            .attr('fill', d => d.data.color)
+            .attr('d', arc);
+
+        // labels on the arcs
+        arcs.each(function (d, i) {
+            const arcGroup = d3.select(this);
+
+
+            const percent = Math.round((d.data.displayValue / totalDisplay) * 100); // Based on actual values
+
+            // (outside the arc)
+            const angle = (d.startAngle + d.endAngle) / 2;
+            const labelRadius = radius + 50;
+            const x = Math.cos(angle - Math.PI / 2) * labelRadius;
+            const y = Math.sin(angle - Math.PI / 2) * labelRadius;
+
+            // foreign object HTML content
+            const fo = arcGroup.append('foreignObject')
+                .attr('x', x - 60)
+                .attr('y', y - 40)
+                .attr('width', 120)
+                .attr('height', 80);
+
+            const labelDiv = fo.append('xhtml:div')
+                .attr('class', 'label-box')
+                .style('text-align', 'center');
+
+            labelDiv.append('div')
+                .attr('class', 'label-value')
+                .html(`${d.data.displayValue.toLocaleString()} <span class="label-percent">(${percent}%)</span>`);
+
+            labelDiv.append('div')
+                .attr('class', 'label-name')
+                .text(d.data.label);
+        });
+    </script>
+</body>
+
+</html>
