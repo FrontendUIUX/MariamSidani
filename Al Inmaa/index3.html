@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard with Popular Requests</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f9f2ed;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .dashboard {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        /* Popular Requests Card (Left) */
+        #popular-requests {
+            background: #fefcfb;
+            padding: 20px;
+            border-radius: 12px;
+            width: 500px;
+            border: 1px solid rgb(255, 227, 207);
+        }
+
+        #popular-requests h3 {
+            margin-bottom: 20px;
+            color: #1e3a5f;
+            font-size: 24px;
+        }
+
+        #chart {
+            width: 100%;
+            position: relative;
+            height: auto;
+        }
+
+        svg {
+            shape-rendering: crispEdges;
+        }
+
+        .bar rect {
+            transition: opacity 0.3s;
+        }
+
+        .bar:hover rect {
+            opacity: 0.8;
+        }
+
+        .value {
+            font-size: 16px;
+            font-weight: 600;
+            fill: #ffffffba;
+        }
+
+        .axis path {
+            fill: none;
+            stroke: none;
+        }
+
+        .axis .tick line {
+            stroke-width: 1;
+            stroke: rgba(0, 0, 0, 0.1);
+        }
+
+        .axis .tick text {
+            fill: #666;
+            font-size: 12px;
+        }
+
+        /* Right Column Container */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 30rem;
+            width: 100%;
+        }
+
+
+        /* Card Styles for Right Column */
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 20px;
+        }
+
+        /* User Satisfaction Card */
+        .rating-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .star-icon {
+            width: 35px;
+            height: 35px;
+        }
+
+        .rating-number {
+            font-size: 35px;
+            font-weight: 700;
+            color: #1e3a5f;
+            line-height: 1;
+        }
+
+        .rating-text {
+            font-size: 15px;
+            color: #8b9db5;
+            margin-left: 6px;
+        }
+
+        .bars-container {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .bar {
+            height: 12px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .bar-filled {
+            background: linear-gradient(90deg, #ff9b85 0%, #ff8a73 100%);
+        }
+
+        .bar-empty {
+            background: #ffddd6;
+        }
+
+        /* Average Time Card */
+        .time-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .dropdown {
+            background: #f5e6e3;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            color: #6b7280;
+            font-weight: 500;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 44px;
+        }
+
+        .time-content {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .clock-icon-container {
+            width: 80px;
+            height: 80px;
+            background: #fef3ed;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .clock-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .time-info {
+            flex: 1;
+        }
+
+        .days-number {
+            font-size: 30px;
+            font-weight: 700;
+            color: #1e3a5f;
+            line-height: 1.2;
+        }
+
+        .time-label {
+            font-size: 18px;
+            color: #a0aec0;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Popular Requests Card (Left) -->
+        <div id="popular-requests">
+            <h3>Popular Requests</h3>
+            <div id="chart"></div>
+        </div>
+
+        <!-- Right Column with User Satisfaction and Average Time -->
+        <div class="right-column">
+            <!-- User Satisfaction Card -->
+            <div class="card">
+                <h2 class="card-title">User Satisfaction</h2>
+                <div class="rating-container">
+                    <svg class="star-icon" viewBox="0 0 24 24" fill="#f4c150">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    <div>
+                        <span class="rating-number">4.2</span>
+                        <span class="rating-text">of 5</span>
+                    </div>
+                </div>
+                <div class="bars-container" id="barsContainer"></div>
+            </div>
+
+            <!-- Average Time Card -->
+            <div class="card">
+                <div class="time-header">
+                    <h2 class="card-title" style="margin-bottom: 0;">Average Time</h2>
+                    <select class="dropdown">
+                        <option>Request Study</option>
+                        <option>Project Analysis</option>
+                        <option>Implementation</option>
+                    </select>
+                </div>
+                <div class="time-content">
+                    <div class="clock-icon-container">
+                        <svg class="clock-icon" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 6v6l4 2" />
+                        </svg>
+                    </div>
+                    <div class="time-info">
+                        <div class="days-number">13 Days</div>
+                        <div class="time-label">Average Completion Time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Popular Requests Chart (D3.js)
+        var data = [
+            ["Account Approvals", 1450],
+            ["Audit Request", 2000],
+            ["Branch Visit", 1800],
+            ["RGB Tasks", 1500],
+            ["Request Study", 2271]
+        ];
+
+        var chart = document.getElementById("chart"),
+            axisMargin = 20,
+            margin = 60,
+            startOffset = -20,
+            width = chart.offsetWidth,
+            barHeight = 30,
+            barPadding = 15;
+
+        var height = (barHeight + barPadding) * data.length + axisMargin + 60;
+        var innerHeight = height - axisMargin - 20;
+        chart.style.height = height + "px";
+
+        var max = d3.max(data.map(function (i) { return i[1]; }));
+
+        var svg = d3.select(chart)
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        var bar = svg.selectAll("g")
+            .data(data)
+            .enter()
+            .append("g")
+            .attr("class", "bar")
+            .attr("transform", function (d, i) {
+                var y = height - axisMargin - (data.length - i) * (barHeight + barPadding) - 20;
+                return "translate(" + margin + "," + y + ")";
+            });
+
+        var scale = d3.scaleLinear()
+            .domain([0, max])
+            .range([0, width - margin * 2]);
+
+        var xAxis = d3.axisBottom(scale)
+            .tickSize(-innerHeight)
+            .tickValues([0, 500, 1000, 1500, 2000, 2500, 3000, 3500])
+            .tickFormat(function (d) {
+                if (d === 0) return "0";
+                if (d === 500) return "100";
+                if (d === 1000) return "1K";
+                if (d === 1500) return "2K";
+                if (d === 2000) return "4K";
+                if (d === 2500) return "8K";
+                return d;
+            });
+
+        svg.insert("g", ":first-child")
+            .attr("class", "axis")
+            .attr("transform", "translate(" + margin + "," + (height - axisMargin) + ")")
+            .call(xAxis);
+
+        var colors = ["#2fc04f", "#f59175", "#c9d8e1", "#002134", "#9795e0"];
+
+        bar.append("rect")
+            .attr("transform", "translate(" + startOffset + ", 0)")
+            .attr("height", barHeight)
+            .attr("width", function (d) { return scale(d[1]); })
+            .attr("fill", function (d, i) { return colors[i % colors.length]; })
+            .attr("rx", 8)
+            .attr("ry", 8);
+
+        bar.append("text")
+            .attr("class", "value")
+            .attr("y", barHeight / 2)
+            .attr("x", startOffset + 8)
+            .attr("dy", ".35em")
+            .attr("text-anchor", "start")
+            .attr("fill", "#ffffff")
+            .style("font-weight", "600")
+            .text(function (d) { return d[0]; });
+
+        //  Rating Bar
+        const rating = 4.5;
+        const numBars = 5;
+        const filledBars = rating;
+
+        const barsData = Array.from({ length: numBars }, (_, i) => {
+            const barIndex = i + 1;
+            if (barIndex <= Math.floor(filledBars)) {
+                return { filled: 1, width: '12%' };
+            } else if (barIndex === Math.ceil(filledBars)) {
+                const partial = filledBars - Math.floor(filledBars);
+                return { filled: partial, width: '18%' };
+            } else {
+                return { filled: 0, width: '18%' };
+            }
+        });
+
+        const container = d3.select('#barsContainer');
+
+        const bars = container
+            .selectAll('div')
+            .data(barsData)
+            .enter()
+            .append('div')
+            .attr('class', 'bar')
+            .style('flex', d => d.width);
+
+        bars.each(function (d, i) {
+            const bar = d3.select(this);
+
+            if (d.filled === 1) {
+                bar.classed('bar-filled', true);
+            } else if (d.filled > 0) {
+                bar.style('background', `linear-gradient(90deg, 
+                    #ff9b85 0%, 
+                    #ff8a73 ${d.filled * 100}%, 
+                    #ffddd6 ${d.filled * 100}%, 
+                    #ffddd6 100%)`);
+            } else {
+                bar.classed('bar-empty', true);
+            }
+        });
+
+    </script>
+</body>
+
+</html>
